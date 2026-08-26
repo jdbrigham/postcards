@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>1584</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+  <script src="../js/moment.js"></script>
+
+</head>
+<body>
+<div class="media">
+  <video class="filtered"  id="c1" x-webkit-airplay="true" webkit-playsinline="true" playsinline="true" preload="auto" autoplay src="../vid/1584.mp4" poster="../img/1584_first.png"></video>
+  <div id="play-pause" data-state="play">Pause</div>
+  <h2 id="date">august 11th</h2>
+  <h1 id="time">8:33 am</h1>
+  <img id="image" src="../img/1584_last.png" />
+  <div class="container">
+    <div class="center">
+      <button id="replaybutton" onclick="myFunction()"><span class="iconify-inline" data-icon="mdi:replay" data-width="30"></span> Replay</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="prog-wrapper">
+  <div class="item1">8:33 am</div>
+  <div class="item2">
+    <progress id="progress" max="100" value="0">Progress</progress>
+  </div>
+  <div class="item3">10:00 am</div>
+</div>
+
+  <script  src="../js/script.js"></script>
+  <script  src="js/myMoment.js"></script>
+  <script  src="../js/progress.js"></script>
+
+<!-- script option to hide video after it ends, revealing image beneath -->
+
+  <script>
+  var vid = document.getElementById("c1");
+  var el = document.getElementById("replaybutton");
+  vid.onended = function() {
+  document.getElementById("play-pause").innerHTML = "rePLAY";
+  vid.style.display = "none";
+  el.style.display = "inline-block";
+  document.getElementById("time").style.display = "none";
+  document.getElementById("play-pause").style.display = "none";
+  document.getElementById("date").style.display = "none";
+  document.getElementById("image").style.display = "inline-block";
+  };
+</script>
+
+<!-- script option to use button (only visible after video ends) to reload the page and start over again -->
+<script>
+function myFunction() {
+    location.reload();
+}
+</script>
+</body>
+</html>
